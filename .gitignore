@@ -1,0 +1,34 @@
+# Python
+*.pyc
+__pycache__/
+
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+
+# Environments
+env/
+venv/
+ENV/
+*.env
+*.sqlite3
+
+# VS Code
+.vscode/
+
+# Mac
+.DS_Store
+
+# Sphinx
+docs/_build/
+
+# Docker
+*.pid
+
+# Secrets
+*.env
+secrets.txt

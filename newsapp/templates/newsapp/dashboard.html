@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load group_filters %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h1>Dashboard</h1>
+
+    {% if user|in_group:"Journalist" %}
+        <p>Welcome, Journalist! You can create and manage your articles.</p>
+        <a href="{% url 'article_create' %}" class="btn btn-primary">Write New Article</a>
+
+    {% elif user|in_group:"Editor" %}
+        <p>Welcome, Editor! You can review and approve submitted articles.</p>
+        <a href="{% url 'article_list' %}" class="btn btn-success">View All Articles</a>
+
+    {% elif user|in_group:"Reader" %}
+        <p>Welcome, Reader! You can subscribe to your favorite journalists and publishers.</p>
+        <a href="{% url 'subscriptions' %}" class="btn btn-info">Manage Subscriptions</a>
+
+    {% else %}
+        <p>Unknown role. Please contact support.</p>
+    {% endif %}
+{% endblock %}

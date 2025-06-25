@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load group_filters %}
+{% block content %}
+
+{% block title %}Articles{% endblock %}
+<h2 class="mb-4">Articles</h2>
+
+<ul class="list-group">
+    {% for article in articles %}
+        <li class="list-group-item d-flex justify-content-between align-items-start flex-wrap">
+            <div class="me-auto">
+                <a href="{% url 'article_detail' article.pk %}" class="fw-bold">{{ article.title }}</a>
+                <br>
+                <small class="text-muted">By {{ article.author.username }}</small>
+            </div>
+
+            <div>
+                {% if article.approved %}
+                    <span class="badge bg-success">Approved</span>
+                {% else %}
+                    <span class="badge bg-warning text-dark me-2">Pending</span>
+
+                    {% if user|in_group:"Editor" %}
+                        <form method="post" action="{% url 'approve_article' article.pk %}" class="d-inline">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-sm btn-success">Approve</button>
+                        </form>
+                    {% endif %}
+                {% endif %}
+            </div>
+
+            <div>
+                {% if user == article.author or user|in_group:"Editor" %}
+                    <a href="{% url 'article_update' article.pk %}" class="btn btn-sm btn-primary ms-2">Edit</a>
+                {% endif %}
+            </div>
+        </li>
+    {% empty %}
+        <li class="list-group-item">No articles available.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

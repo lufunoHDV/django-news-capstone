@@ -1,0 +1,142 @@
+/* General layout */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #121212;
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 880px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #1e1e1e;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Header and navigation */
+header {
+    background: linear-gradient(90deg, #00b4db, #0083b0);
+    padding: 25px;
+    color: #ffffff;
+    text-align: center;
+    border-bottom: 3px solid #00aaff;
+}
+
+nav a {
+    color: #ffffff;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffdd57;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    padding: 12px;
+    font-size: 15px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    border-radius: 10px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #00b4db;
+    outline: none;
+}
+
+button,
+input[type="submit"] {
+    padding: 12px 24px;
+    background-color: #00b4db;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #0083b0;
+}
+
+/* Cards */
+.card {
+    padding: 20px;
+    background-color: #252525;
+    border: 1px solid #333;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #1e1e1e;
+}
+
+th, td {
+    padding: 14px 18px;
+    border: 1px solid #333;
+    text-align: left;
+}
+
+th {
+    background-color: #2d2d2d;
+    color: #00b4db;
+    font-weight: bold;
+}
+
+/* Alerts */
+.success {
+    padding: 12px;
+    background-color: #1f4831;
+    border-left: 6px solid #28a745;
+    color: #b1f2c0;
+    border-radius: 6px;
+}
+
+.error {
+    padding: 12px;
+    background-color: #4a1f1f;
+    border-left: 6px solid #dc3545;
+    color: #f5b6b6;
+    border-radius: 6px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #aaa;
+    font-size: 14px;
+    background-color: #1a1a1a;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+}

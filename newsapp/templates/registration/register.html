@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-6">
+            <div class="card shadow-sm p-4">
+                <h2 class="text-center mb-4">Create an Account</h2>
+
+                {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <strong>There were errors in your submission:</strong>
+                        <ul class="mb-0">
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <li>{{ field.label }}: {{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    <fieldset>
+                        {{ form.as_p }}
+                    </fieldset>
+                    <div class="d-grid mt-3">
+                        <button type="submit" class="btn btn-success">Register</button>
+                    </div>
+                </form>
+
+                <hr>
+
+                <p class="text-center mt-3">
+                    Already have an account? <a href="{% url 'login' %}">Login here</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

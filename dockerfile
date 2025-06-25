@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 # Set environment variables to prevent .pyc files and enable output buffering
 ENV PYTHONDONTWRITEBYTECODE=1 \

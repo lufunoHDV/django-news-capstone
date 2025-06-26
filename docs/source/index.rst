@@ -1,17 +1,20 @@
-.. django news app documentation master file, created by
-   sphinx-quickstart on Tue Jun 24 12:07:21 2025.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-django news app documentation
-=============================
-
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
-
+django news app
+===============
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   modules
+   manage
+   news_project
+   newsapp
+   newsapp.migrations
+   newsapp.templatetags
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

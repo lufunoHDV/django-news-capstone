@@ -9,16 +9,14 @@
 import os
 import sys
 
-# Add your Django project folder to sys.path
-sys.path.insert(0, os.path.abspath(os.path.join('..', '..', 'news_project')))
+# Add the root project path to sys.path
+sys.path.insert(0, os.path.abspath(os.path.join('..', '..')))
 
 # Set the Django settings module environment variable
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'news_project.settings')
 
 import django
 django.setup()
-
-
 
 project = 'django news app'
 copyright = '2025, lufuno madzivhandila'
